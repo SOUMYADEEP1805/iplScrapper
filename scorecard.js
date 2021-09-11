@@ -24,7 +24,8 @@ function cb(err,response,html){
 }
 function dataExtractor(html){
     let searchTool = cheerio.load(html);
-    let infoElem = searchTool(".event .match-info.match-info-MATCH .description");
+    // let infoElem = searchTool(".event .match-info.match-info-MATCH .description");
+    let infoElem = searchTool(".header-info .description");
     let matchInfo = infoElem.text().split(",");
     let venue = matchInfo[1].trim();
     let date = matchInfo[2].trim();
